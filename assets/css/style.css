@@ -1,0 +1,10 @@
+.jumbotron{ 
+    background-color: rgb(200,200,200);
+}
+
+.jumbotron h1, h2, h3 {
+    font-family: "Graduate", sans-serif;
+    color: rgb(78,42,132);
+    
+}
+
