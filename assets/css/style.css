@@ -2,9 +2,29 @@
     background-color: rgb(200,200,200);
 }
 
-.jumbotron h1, h2, h3 {
+.jumbotron h1 {
     font-family: "Graduate", sans-serif;
     color: rgb(78,42,132);
-    
+}
+
+.sidebar img {
+    width: 100%;
+    max-width: 250px;
+}
+
+h2, h3 {
+    font-family: "Graduate", sans-serif;
+    color: rgb(255,255,255);
+}
+
+.timer {
+    padding-top: 25px;
+}
+
+.trivia{
+    height: 500px;
+    background-image: url("../images/field.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
