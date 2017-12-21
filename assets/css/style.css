@@ -28,3 +28,6 @@ h2, h3 {
     background-position: center;
 }
 
+.col-xs-3 img {
+    width: 100%;
+}
