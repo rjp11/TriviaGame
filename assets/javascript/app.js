@@ -1,11 +1,16 @@
 //set up all variables
 var time = 30;
+//stores the question number easily in order to call the appropriate index from the arrays.
 var questionNumber = 0;
+//tallies right, wrong and unanswered questions
 var rightAnswer = 0;
 var wrongAnswer = 0;
 var noAnswer = 0;
+//sets the interval to a variable so we can easily clear it in functions
 var intervalId;
+//stores the text associated with the user's guess in order to compare to the right answer
 var selectedOption;
+//array of trivia questions
 var questions = ["Who holds the record for career rushing yards?",
     "Who holds the record for career passing yards?",
     "Who holds the record for career receiving yards?",
@@ -15,7 +20,9 @@ var questions = ["Who holds the record for career rushing yards?",
     "Which of these former players was not named to an All-American team?",
     "How many overtime victories did Northwestern compile during their 7 game win streak this year?"
 ];
+//sets a variable for the length of the questions array in case questions are added or removed
 var totalQuestions = questions.length;
+//array of the 4 answer options for each question
 var options = [
     ["Darnell Autry", "Damien Anderson", "Justin Jackson", "Tyrell Sutton"],
     ["Zak Kustok", "CJ Bacher", "Steve Schnur", "Brett Basanez"],
@@ -26,6 +33,7 @@ var options = [
     ["Zach Strief", "Pat Fitzgerald", "Venric Mark", "Darnell Autry"],
     ["1", "2", "3", "4"]
 ];
+//array of the right answers for each question
 var answers = ["Justin Jackson",
     "Brett Basanez",
     "D'Wayne Bates",
@@ -35,17 +43,20 @@ var answers = ["Justin Jackson",
     "Darnell Autry",
     "3"
 ];
+//array of images to be displayed with the right answer on the pause page
 var images = ["justinjackson.jpg",
-"brettbasanez.jpg",
-"dwaynebates.jpeg",
-"patfitz.jpg",
-"drakedunsmore.jpg",
-"brianpeters.jpg",
-"darnellautry.jpg",
-"threeot.jpg"
+    "brettbasanez.jpg",
+    "dwaynebates.jpeg",
+    "patfitz.jpg",
+    "drakedunsmore.jpg",
+    "brianpeters.jpg",
+    "darnellautry.jpg",
+    "threeot.jpg"
 ];
 
-//define all functions
+//define all functions below
+
+//sets the opening page and creates a button to begin the trivia game
 function startTrivia() {
     rightAnswer = 0;
     wrongAnswer = 0;
@@ -56,6 +67,7 @@ function startTrivia() {
     $(".question").html(`<br><br><a class='btn-lg btn-default startTrivia'>Click to get started!</a>`)
 };
 
+//resets all variables and the first question without refreshing. 
 function reset() {
     rightAnswer = 0;
     wrongAnswer = 0;
@@ -66,16 +78,17 @@ function reset() {
     printQuestion();
 };
 
+//clears all of the divs before assigning new HTML
 function clearDivs() {
     $(".timer").empty();
     $(".question").empty();
-    $(".choices").empty();
     $(".option").empty();
     $(".timer").empty();
     $(".img").empty();
     $(".line").empty();
 };
 
+//function to run the countdown timer
 function run() {
     $(".timer").html(`<h2>Time Remaining: <span class="countdown">30</span> Seconds</h2>`);
     intervalId = setInterval(decrement, 1000);
@@ -120,7 +133,7 @@ function wrong() {
     setTimeout(pause, 3000);
 };
 
-//3. tally "time ups", pause and show right answer
+//tally "time ups", pause and show right answer
 function timesUp() {
     clearDivs();
     noAnswer++;
@@ -130,7 +143,7 @@ function timesUp() {
     setTimeout(pause, 3000);
 };
 
-//4. pause on right/wrong/unanswered page, or end game if at end of questions
+//pause on right/wrong/unanswered page, or end game if at end of questions
 function pause() {
     if (questionNumber < (totalQuestions - 1)) {
         questionNumber++;
@@ -143,7 +156,7 @@ function pause() {
     }
 };
 
-//5. game ends
+//game ends, different text is displayed depending on how well the player does
 function endGame() {
     clearInterval(intervalId);
     clearDivs();
@@ -160,7 +173,7 @@ function endGame() {
     $(".four").html(`<button class = "reset btn-lg btn-default">Try Again</button>`)
 };
 
-//now, run all of these damn functions you wrote
+//now its time to call of the written functions
 $(document).ready(function () {
 
     startTrivia();
@@ -183,11 +196,7 @@ $(document).ready(function () {
         }
     });
 
-    $("body").on("click", ".reset", function(event){
+    $("body").on("click", ".reset", function (event) {
         reset();
     });
 });
-
-
-//if time === 0, run timesUp function
-//when questionNumber = totalQuestions, end game and return results
