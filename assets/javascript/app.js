@@ -9,24 +9,40 @@ var selectedOption;
 var questions = ["Who holds the record for career rushing yards?",
     "Who holds the record for career passing yards?",
     "Who holds the record for career receiving yards?",
-    "Which coach has the most wins in program history?"
+    "Which coach has the most wins in program history?",
+    "Which player broke multiple tackles in the Outback Bowl against Auburn to score my favorite Northwestern touchdown?",
+    "Which Wildcat scored the only TD in the 'unsafe' endzone at Wrigley Field?",
+    "Which of these former players was not named to an All-American team?",
+    "How many overtime victories did Northwestern compile during their 7 game win streak this year?"
 ];
 var totalQuestions = questions.length;
 var options = [
     ["Darnell Autry", "Damien Anderson", "Justin Jackson", "Tyrell Sutton"],
     ["Zak Kustok", "CJ Bacher", "Steve Schnur", "Brett Basanez"],
     ["Ross Lane", "D'Wayne Bates", "Jeremy Ebert", "Eric Peterman"],
-    ["Pat Fitzgerald", "Gary Barnett", "Ara Parseghian", "Randy Walker"]
+    ["Pat Fitzgerald", "Gary Barnett", "Ara Parseghian", "Randy Walker"],
+    ["Andrew Brewer", "Brian Peters", "Drake Dunsmore", "Mike Kafka"],
+    ["Evan Watkins", "Brian Peters", "Mike Trumpy", "Tony Jones"],
+    ["Zach Strief", "Pat Fitzgerald", "Venric Mark", "Darnell Autry"],
+    ["1", "2", "3", "4"]
 ];
 var answers = ["Justin Jackson",
     "Brett Basanez",
     "D'Wayne Bates",
-    "Pat Fitzgerald"
+    "Pat Fitzgerald",
+    "Drake Dunsmore",
+    "Brian Peters",
+    "Darnell Autry",
+    "3"
 ];
 var images = ["justinjackson.jpg",
 "brettbasanez.jpg",
 "dwaynebates.jpeg",
-"patfitz.jpg"
+"patfitz.jpg",
+"drakedunsmore.jpg",
+"brianpeters.jpg",
+"darnellautry.jpg",
+"threeot.jpg"
 ];
 
 //define all functions
